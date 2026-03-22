@@ -1461,12 +1461,25 @@ h6 {
     overflow: hidden;
     height: 200px;
     margin-top: 8px;
+    display: block;
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.contact-map:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
 }
 
 .contact-map img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform var(--transition-base);
+}
+
+.contact-map:hover img {
+    transform: scale(1.05);
 }
 
 .map-overlay {
@@ -1486,6 +1499,28 @@ h6 {
 
 .map-overlay i {
     color: var(--brand-light-red);
+}
+
+.map-click-hint {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(200, 16, 46, 0.75);
+    color: var(--white);
+    font-size: 0.95rem;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.contact-map:hover .map-click-hint {
+    opacity: 1;
 }
 
 /* Contact Form */
